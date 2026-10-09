@@ -1,0 +1,1350 @@
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: #050816;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   CURSOR PERSONALIZADO
+========================= */
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 65px;
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #050816;
+}
+
+.logo {
+    color: #743cff;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   BOTÃO HAMBÚRGUER
+========================= */
+
+.botao-menu {
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    background-color: #050816;
+    border: 1px solid transparent;
+    border-radius: 7px;
+
+    transition: border-color 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.botao-menu:hover,
+.botao-menu:focus-visible {
+    border-color: #743cff;
+    background-color: rgba(116, 60, 255, 0.12);
+    outline: none;
+}
+
+.botao-menu span {
+    display: block;
+    width: 21px;
+    height: 2px;
+
+    background-color: white;
+    border-radius: 2px;
+
+    transition: transform 0.3s ease,
+                opacity 0.3s ease;
+}
+
+.botao-menu.ativo span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.botao-menu.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.botao-menu.ativo span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================
+   MENU DE NAVEGAÇÃO
+========================= */
+
+.menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 35px;
+
+    min-width: 190px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    list-style: none;
+
+    background-color: #050816;
+    border: 1px solid rgba(116, 60, 255, 0.35);
+    border-radius: 10px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition: opacity 0.25s ease,
+                transform 0.25s ease,
+                visibility 0.25s ease;
+}
+
+.menu.aberto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.menu a {
+    display: block;
+    padding: 11px 13px;
+
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: color 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    color: white;
+    background-color: rgba(116, 60, 255, 0.2);
+    box-shadow: 0 0 12px rgba(116, 60, 255, 0.22);
+    transform: translateX(3px);
+    outline: none;
+}
+
+
+/* =========================
+   INÍCIO
+========================= */
+
+.inicio {
+    min-height: calc(100vh - 65px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    padding: 40px 10%;
+}
+
+
+/* TEXTO */
+
+.inicio-texto {
+    width: 55%;
+    max-width: 560px;
+    min-width: 0;
+}
+
+.saudacao {
+    color: #743cff;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.inicio h1 {
+    color: white;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+}
+
+.inicio h2 {
+    min-height: 22px;
+    margin-bottom: 20px;
+
+    color: #c8c8c8;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+
+/* DESCRIÇÕES */
+
+.descricao {
+    max-width: 480px;
+    margin-bottom: 8px;
+
+    color: #d0d0d0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.descricao-menor {
+    max-width: 480px;
+
+    color: #898989;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOTÕES PRINCIPAIS
+========================= */
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.botao-principal,
+.botao-secundario {
+    display: inline-block;
+    padding: 10px 15px;
+
+    border-radius: 5px;
+    font-size: 11px;
+    text-decoration: none;
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.botao-principal {
+    color: white;
+    background-color: #743cff;
+}
+
+.botao-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px rgba(116, 60, 255, 0.3);
+}
+
+.botao-secundario {
+    color: white;
+    background-color: transparent;
+    border: 1px solid #743cff;
+}
+
+.botao-secundario:hover {
+    background-color: #743cff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   REDES SOCIAIS
+========================= */
+
+.redes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.redes img:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.inicio-foto {
+    width: 40%;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-foto img {
+    display: block;
+    width: 320px;
+    max-width: 100%;
+}
+
+
+/* =========================
+   TELAS INTERMEDIÁRIAS
+   FOTO AO LADO DO TEXTO
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 60px;
+        padding: 0 20px;
+    }
+
+    .menu {
+        right: 20px;
+    }
+
+    .inicio {
+        min-height: calc(100vh - 60px);
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        padding: 40px 5%;
+    }
+
+    .inicio-texto {
+        width: 58%;
+        max-width: 560px;
+        min-width: 0;
+    }
+
+    .inicio-foto {
+        width: 42%;
+        flex-shrink: 0;
+    }
+
+    .inicio-foto img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .inicio h1 {
+        font-size: clamp(24px, 4vw, 32px);
+    }
+
+    .inicio h2 {
+        font-size: 15px;
+    }
+
+    .botoes {
+        gap: 10px;
+    }
+
+    .botao-principal,
+    .botao-secundario {
+        padding: 10px 12px;
+    }
+}
+
+
+/* =========================
+   CELULARES ESTREITOS
+   FOTO ABAIXO DO TEXTO
+========================= */
+
+@media (max-width: 520px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .menu {
+        right: 15px;
+    }
+
+    .inicio {
+        flex-direction: column;
+        min-height: auto;
+
+        align-items: stretch;
+        gap: 30px;
+
+        padding: 45px 7% 35px;
+    }
+
+    .inicio-texto {
+        width: 100%;
+        max-width: none;
+    }
+
+    .inicio h1 {
+        font-size: clamp(25px, 7vw, 32px);
+    }
+
+    .inicio h2 {
+        font-size: 16px;
+    }
+
+    .inicio-foto {
+        width: 100%;
+    }
+
+    .inicio-foto img {
+        width: 75%;
+        max-width: 260px;
+    }
+
+    .botoes {
+        gap: 10px;
+    }
+}
+
+
+/* =========================
+   DISPOSITIVOS COM MOUSE
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .botao-menu,
+    .menu a,
+    .botoes a,
+    .redes a,
+    .logo {
+        cursor: none !important;
+    }
+}
+
+
+/* =========================
+   DISPOSITIVOS DE TOQUE
+========================= */
+
+@media (hover: none) {
+
+    .cursor {
+        display: none;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}
+
+
+
+/* ===== PARTE 2: SOBRE, HABILIDADES E PROJETOS ===== */
+
+/* CONFIGURAÇÃO DAS SEÇÕES */
+
+.secao {
+    width: 100%;
+    padding: 100px 8%;
+    scroll-margin-top: 80px;
+}
+
+.titulo-secao {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.subtitulo-secao {
+    color: #743cff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.titulo-secao h2 {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+.titulo-secao h2 span {
+    color: #743cff;
+}
+
+.texto-secao {
+    color: #b8bdd3;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* SOBRE MIM */
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 35px;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sobre-texto,
+.sobre-destaque {
+    padding: 30px;
+    border: 1px solid #242344;
+    border-radius: 16px;
+    background: #0b0d22;
+}
+
+.sobre-texto h3,
+.sobre-destaque h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.sobre-texto p,
+.sobre-destaque p {
+    color: #b8bdd3;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.sobre-destaque {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-color: #493080;
+    background: linear-gradient(145deg, #11102c, #0b0d22);
+}
+
+.destaque-simbolo {
+    color: #743cff;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* HABILIDADES */
+
+.habilidades-lista {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.habilidade-card {
+    padding: 24px;
+    background: #0b0d22;
+    border: 1px solid #242344;
+    border-radius: 14px;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.habilidade-card:hover {
+    border-color: #743cff;
+    transform: translateY(-4px);
+}
+
+/* ÍCONES PEQUENOS */
+
+.icone-habilidade {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.habilidade-card:hover .icone-habilidade {
+    transform: translateY(-2px);
+}
+
+.habilidade-numero {
+    display: block;
+    color: #743cff;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.habilidade-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.habilidade-card p {
+    color: #b8bdd3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* PROJETOS */
+
+.projetos-lista {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    background: #0b0d22;
+    border: 1px solid #242344;
+    border-radius: 16px;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.projeto-card:hover {
+    border-color: #743cff;
+    transform: translateY(-5px);
+}
+
+.projeto-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.projeto-tag {
+    color: #a98aff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.projeto-indice {
+    color: #743cff;
+    font-size: 13px;
+}
+
+.projeto-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.projeto-card p {
+    color: #b8bdd3;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.projeto-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.projeto-tecnologias span {
+    padding: 6px 9px;
+    color: #d5c8ff;
+    background: #17132d;
+    border: 1px solid #30224f;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+/* ANIMAÇÃO DE ENTRADA AO ROLAR */
+
+[data-revelar] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.revelar-ativo [data-revelar] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease,
+                transform 0.6s ease;
+}
+
+.revelar-ativo [data-revelar].visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .secao {
+        padding: 80px 6%;
+    }
+
+    .habilidades-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .projetos-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .secao {
+        padding: 65px 5%;
+    }
+
+    .titulo-secao h2 {
+        font-size: 29px;
+    }
+
+    .sobre-conteudo,
+    .habilidades-lista,
+    .projetos-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-texto,
+    .sobre-destaque,
+    .habilidade-card,
+    .projeto-card {
+        padding: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .habilidade-card,
+    .projeto-card,
+    .icone-habilidade,
+    [data-revelar] {
+        transition: none;
+    }
+
+    .habilidade-card:hover,
+    .projeto-card:hover,
+    .habilidade-card:hover .icone-habilidade {
+        transform: none;
+    }
+}
+
+/* ===== FIM DA PARTE 2 ===== */
+
+
+/* ===== PARTE 3: GITHUB, CONTATO E RODAPÉ ===== */
+
+.github-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    text-align: center;
+    background: #0b0d22;
+    border: 1px solid #30224f;
+    border-radius: 18px;
+}
+
+.github-icone {
+    display: block;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+}
+
+.github-card h3 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.github-card p {
+    color: #b8bdd3;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.github-card .botao-principal {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* CONTATO */
+
+.contato-conteudo {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.contato-info,
+.contato-formulario {
+    padding: 30px;
+    background: #0b0d22;
+    border: 1px solid #242344;
+    border-radius: 16px;
+}
+
+.contato-info h3 {
+    color: #fff;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.contato-info > p {
+    color: #b8bdd3;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.contato-simbolo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #a98aff;
+    background: #17132d;
+    border: 1px solid #30224f;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.contato-item h4 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contato-item p {
+    color: #b8bdd3;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.contato-redes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.contato-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #17132d;
+    border: 1px solid #30224f;
+    border-radius: 10px;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.contato-redes a:hover {
+    border-color: #743cff;
+    transform: translateY(-3px);
+}
+
+.contato-redes img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* FORMULÁRIO */
+
+.contato-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-formulario label {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 13px 14px;
+    color: #fff;
+    background: #080a1b;
+    border: 1px solid #302b4c;
+    border-radius: 8px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    border-color: #743cff;
+    box-shadow: 0 0 0 3px #743cff22;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: #777b98;
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.botao-enviar {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.aviso-formulario {
+    color: #8589a5;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    padding: 35px 8%;
+    text-align: center;
+    background: #03040d;
+    border-top: 1px solid #242344;
+}
+
+.rodape .logo {
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.rodape > p {
+    color: #b8bdd3;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.rodape .rodape-direitos {
+    color: #777b98;
+    font-size: 11px;
+    margin-top: 18px;
+}
+
+/* BOTÃO DE TEMA */
+
+.botao-tema {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1000;
+    width: 46px;
+    height: 46px;
+    color: #fff;
+    background: #743cff;
+    border: 1px solid #a98aff;
+    border-radius: 50%;
+    font-size: 21px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #0005;
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.botao-tema:hover {
+    transform: rotate(15deg) scale(1.05);
+}
+
+/* MODAL */
+
+.modal-sucesso {
+    width: min(420px, calc(100% - 32px));
+    padding: 0;
+    color: #fff;
+    background: #0b0d22;
+    border: 1px solid #493080;
+    border-radius: 18px;
+}
+
+.modal-sucesso::backdrop {
+    background: #02030dcc;
+    backdrop-filter: blur(4px);
+}
+
+.modal-conteudo {
+    padding: 32px;
+    text-align: center;
+}
+
+.modal-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+    background: #743cff;
+    border-radius: 50%;
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.modal-conteudo h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.modal-conteudo p {
+    color: #b8bdd3;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.modal-conteudo .botao-principal {
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+
+/* ===== MODO CLARO ===== */
+
+body.modo-claro {
+    background: #f4f5fb;
+    color: #17152b;
+}
+
+/* SEÇÃO INICIAL */
+body.modo-claro .inicio h1,
+body.modo-claro .inicio h2,
+body.modo-claro .inicio h3,
+body.modo-claro .inicio p {
+    color: #21183c;
+}
+
+body.modo-claro .inicio .subtitulo-secao,
+body.modo-claro .inicio .subtitulo {
+    color: #743cff;
+}
+
+/* LINKS E ÍCONES SOCIAIS */
+body.modo-claro .inicio .redes-sociais img,
+body.modo-claro .inicio .contato-redes img {
+    filter: brightness(0.25);
+}
+
+/* BOTÕES DA SEÇÃO INICIAL */
+body.modo-claro .inicio .botao-principal {
+    color: #ffffff;
+}
+
+body.modo-claro .inicio a:not(.botao-principal) {
+    color: #343044;
+}
+
+/* SEÇÕES E TÍTULOS */
+body.modo-claro .secao,
+body.modo-claro .titulo-secao h2 {
+    color: #17152b;
+}
+
+body.modo-claro .sobre-texto,
+body.modo-claro .sobre-destaque,
+body.modo-claro .habilidade-card,
+body.modo-claro .projeto-card,
+body.modo-claro .github-card,
+body.modo-claro .contato-info,
+body.modo-claro .contato-formulario {
+    background: #fff;
+    border-color: #dedbed;
+}
+
+body.modo-claro .titulo-secao h2,
+body.modo-claro .sobre-texto h3,
+body.modo-claro .sobre-destaque h3,
+body.modo-claro .habilidade-card h3,
+body.modo-claro .projeto-card h3,
+body.modo-claro .github-card h3,
+body.modo-claro .contato-info h3,
+body.modo-claro .contato-item h4,
+body.modo-claro .campo-formulario label {
+    color: #21183c;
+}
+
+body.modo-claro .sobre-texto p,
+body.modo-claro .sobre-destaque p,
+body.modo-claro .habilidade-card p,
+body.modo-claro .projeto-card p,
+body.modo-claro .texto-secao,
+body.modo-claro .github-card p,
+body.modo-claro .contato-info > p,
+body.modo-claro .contato-item p {
+    color: #55536b;
+}
+
+/* CAMPOS DO FORMULÁRIO */
+body.modo-claro .campo-formulario input,
+body.modo-claro .campo-formulario textarea {
+    color: #21183c;
+    background: #f8f7fc;
+    border-color: #d8d2e8;
+}
+
+body.modo-claro .campo-formulario input::placeholder,
+body.modo-claro .campo-formulario textarea::placeholder {
+    color: #77738a;
+}
+
+/* DESTAQUES E TECNOLOGIAS */
+body.modo-claro .sobre-destaque {
+    background: linear-gradient(145deg, #fff, #f0eaff);
+}
+
+body.modo-claro .projeto-tecnologias span {
+    color: #5426a6;
+    background: #f1ebff;
+    border-color: #ded0ff;
+}
+
+/* RODAPÉ */
+body.modo-claro .rodape {
+    background: #e9eaf4;
+    border-color: #dedbed;
+}
+
+body.modo-claro .rodape .logo {
+    color: #21183c;
+}
+
+body.modo-claro .rodape > p {
+    color: #55536b;
+}
+
+/* MODAL */
+body.modo-claro .modal-sucesso {
+    color: #21183c;
+    background: #fff;
+    border-color: #dedbed;
+}
+
+body.modo-claro .modal-conteudo p {
+    color: #55536b;
+}
+
+/* RESPONSIVIDADE DA PARTE 3 */
+
+@media (max-width: 800px) {
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .github-card {
+        padding: 28px 20px;
+    }
+
+    .contato-info,
+    .contato-formulario {
+        padding: 22px;
+    }
+
+    .botao-tema {
+        right: 14px;
+        bottom: 14px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .rodape {
+        padding: 30px 5%;
+    }
+}
+
+/* Redes sociais do início no modo claro */
+body.modo-claro .inicio .redes a {
+    box-sizing: border-box;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #21183c;
+    border: 1px solid #30224f;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+body.modo-claro .inicio .redes a:hover {
+    transform: translateY(-3px);
+    border-color: #743cff;
+}
+
+body.modo-claro .inicio .redes img {
+    width: 26px;
+    height: 26px;
+    filter: none;
+}
+
+body.modo-claro .inicio .redes img:hover {
+    transform: none;
+}
+
+.rodape-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 0;
+}
+
+.rodape-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #30224f;
+    border-radius: 10px;
+    background: #21183c;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.rodape-redes a:hover {
+    transform: translateY(-3px);
+    border-color: #743cff;
+}
+
+.rodape-redes img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+    .rodape-redes {
+        gap: 12px;
+    }
+}
+
+/* FIM DO CSS DA PARTE 3 */

@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Erick Ribeiro Souza</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CURSOR PERSONALIZADO -->
+    <div class="cursor" aria-hidden="true">
+        <img src="Imagens/cursor.png" alt="">
+    </div>
+
+    <!-- CABEÇALHO E MENU -->
+    <header class="cabecalho">
+
+        <nav class="navbar" aria-label="Navegação principal">
+
+            <a href="#inicio" class="logo">ERICK</a>
+
+            <button
+                class="botao-menu"
+                id="botaoMenu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuNavegacao">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <ul class="menu" id="menuNavegacao">
+
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#contato">Contato</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <section class="inicio" id="inicio">
+
+            
+            <div class="inicio-texto">
+
+                <p class="saudacao">OLÁ, EU SOU</p>
+
+                <h1>ERICK RIBEIRO SOUZA</h1>
+
+                <h2 id="textoDigitando"></h2>
+
+                <p class="descricao">
+                    "Estudante de Tecnologia da Informação, apaixonado
+                    por desenvolvimento e conhecimento em projetos."
+                </p>
+
+                <p class="descricao-menor">
+                    "Buscando sempre aprender algo novo, transformar
+                    ideias em código e criar soluções."
+                </p>
+
+                <!-- BOTÕES -->
+                <div class="botoes">
+
+                    <a href="#projetos" class="botao-principal">
+                        Ver meus projetos
+                    </a>
+
+                    <a href="#contato" class="botao-secundario">
+                        Entre em contato
+                    </a>
+
+                </div>
+
+                <!-- REDES SOCIAIS -->
+                <div class="redes">
+                <a href="https://github.com/ErickrSouza21"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub">
+                    <img src="Imagens/github.png" alt="GitHub">
+                </a>
+
+                    <a href="https://www.linkedin.com/in/erick-ribeiro-souza-195361403/"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <img src="Imagens/linkedin (1).png" alt="LinkedIn">
+                </a>
+
+                    <a href="https://www.instagram.com/souza.erickribeiro"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <img src="Imagens/instagram.png" alt="Instagram">
+                </a>
+
+                </div>
+
+            </div>
+
+            <!-- FOTO -->
+            <div class="inicio-foto">
+
+                <img src="Imagens/eu.png" alt="Foto de Erick">
+
+            </div>
+
+        </section>
+
+            
+        
+<!-- PARTE 2: SOBRE, HABILIDADES E PROJETOS -->
+
+<section class="secao sobre" id="sobre" data-revelar>
+    <div class="titulo-secao">
+        <p class="subtitulo-secao">CONHEÇA UM POUCO</p>
+        <h2>Sobre <span>mim</span></h2>
+    </div>
+
+    <div class="sobre-conteudo">
+        <div class="sobre-texto">
+            <h3>Olá! Sou o Erick.</h3>
+            <p>Sou estudante de Tecnologia da Informação e tenho interesse em desenvolvimento de software e criação de soluções digitais.</p>
+            <p>Estou sempre buscando aprender novas tecnologias, desenvolver minhas habilidades e transformar ideias em projetos práticos.</p>
+            <p>Meu objetivo é continuar evoluindo na área de TI, adquirindo experiência e construindo projetos cada vez melhores.</p>
+        </div>
+
+        <div class="sobre-destaque">
+            <span class="destaque-simbolo">&lt;/&gt;</span>
+            <h3>Aprender. Criar. Evoluir.</h3>
+            <p>Cada projeto é uma oportunidade de aprender algo novo.</p>
+        </div>
+    </div>
+</section>
+
+<section class="secao habilidades" id="habilidades" data-revelar>
+    <div class="titulo-secao">
+        
+        <h2>Minhas <span>habilidades</span></h2>
+        <p class="subtitulo-secao">O QUE ESTOU APRENDENDO</p>
+        <p class="texto-secao">Tecnologias e conhecimentos que venho desenvolvendo durante minha formação em Tecnologia da Informação.</p>
+    </div>
+
+    <div class="habilidades-lista">
+        <article class="habilidade-card">
+            <img src="Imagens/html.png" alt="HTML" class="icone-habilidade">
+            <span class="habilidade-numero"></span>
+            <h3>HTML</h3>
+            <p>Estruturação de páginas para a web.</p>
+        </article>
+
+        <article class="habilidade-card">
+            <img src="Imagens/css.png" alt="CSS" class="icone-habilidade">
+            <span class="habilidade-numero"></span>
+            <h3>CSS</h3>
+            <p>Estilização, layouts e responsividade.</p>
+        </article>
+
+        <article class="habilidade-card">
+            <img src="Imagens/javascript.png" alt="JavaScript" class="icone-habilidade">
+            <span class="habilidade-numero"></span>
+            <h3>JavaScript</h3>
+            <p>Interações e funcionalidades para sites.</p>
+        </article>
+
+        <article class="habilidade-card">
+            <img src="Imagens/csharp.png" alt="C#" class="icone-habilidade">
+            <span class="habilidade-numero"></span>
+            <h3>C#</h3>
+            <p>Lógica de programação e aplicações.</p>
+        </article>
+
+        <article class="habilidade-card">
+            <img src="Imagens/git2.png" alt="Git" class="icone-habilidade">
+            <span class="habilidade-numero"></span>
+            <h3>Git</h3>
+            <p>Controle de versão e organização de projetos.</p>
+        </article>
+
+        <article class="habilidade-card">
+            <img src="Imagens/figma.png" alt="Figma" class="icone-habilidade">
+            <span class="habilidade-numero"></span>
+            <h3>Figma</h3>
+            <p>Prototipação e organização visual de interfaces.</p>
+        </article>
+    </div>
+</section>
+
+<section class="secao projetos" id="projetos" data-revelar>
+    <div class="titulo-secao">
+        
+        <h2>Meus <span>projetos</span></h2>
+        <p class="subtitulo-secao">IDEIAS TRANSFORMADAS EM PRÁTICA</p>
+        <p class="texto-secao">Alguns projetos desenvolvidos durante meus estudos e minha jornada na área de tecnologia.</p>
+    </div>
+
+    <div class="projetos-lista">
+        <article class="projeto-card">
+            <div class="projeto-topo">
+                <span class="projeto-tag">DESENVOLVIMENTO WEB</span>
+                <span class="projeto-indice">01</span>
+            </div>
+            <h3>ERS Imports</h3>
+            <p>Projeto de site para uma loja de veículos importados, com identidade visual própria, catálogo de veículos e páginas organizadas para navegação.</p>
+            <div class="projeto-tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Figma</span>
+            </div>
+        </article>
+
+        <article class="projeto-card">
+            <div class="projeto-topo">
+                <span class="projeto-tag">PORTFÓLIO</span>
+                <span class="projeto-indice">02</span>
+            </div>
+            <h3>Portfólio pessoal</h3>
+            <p>Site pessoal para apresentar minha trajetória, habilidades, projetos e formas de contato, com layout responsivo e interações em JavaScript.</p>
+            <div class="projeto-tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </article>
+
+        <article class="projeto-card">
+            <div class="projeto-topo">
+                <span class="projeto-tag">PROJETO ACADÊMICO</span>
+                <span class="projeto-indice">03</span>
+            </div>
+            <h3>Formulários web</h3>
+            <p>Exercícios de desenvolvimento de formulários com campos de entrada, validações, máscaras de dados e recursos de interação com JavaScript.</p>
+            <div class="projeto-tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- FIM DA PARTE 2 -->
+
+
+
+<!-- INÍCIO DA PARTE 3 -->
+
+<section class="secao github" id="github" data-revelar>
+    <div class="titulo-secao">
+        <h2>Meu <span>GitHub</span></h2>
+        <p class="subtitulo-secao">MEU TRABALHO NA PRÁTICA</p>
+        <p class="texto-secao">
+            Meu espaço para compartilhar códigos, projetos e minha evolução
+            como estudante de Tecnologia da Informação.
+        </p>
+    </div>
+
+    <div class="github-card">
+        <img src="Imagens/github.png" alt="Ícone do GitHub"
+             class="github-icone">
+
+        <h3>Vamos construir algo incrível?</h3>
+        <p>
+            Confira meus repositórios e acompanhe os projetos que desenvolvo
+            durante minha jornada na programação.
+        </p>
+
+        <a href="https://github.com/ErickrSouza21"
+           target="_blank" rel="noopener noreferrer"
+           class="botao-principal">
+            Visitar meu GitHub ↗
+        </a>
+    </div>
+</section>
+
+<section class="secao contato" id="contato" data-revelar>
+    <div class="titulo-secao">
+        <p class="subtitulo-secao">VAMOS CONVERSAR</p>
+        <h2>Entre em <span>contato</span></h2>
+        <p class="texto-secao">
+            Tem alguma ideia, dúvida ou oportunidade? Envie uma mensagem!
+        </p>
+    </div>
+
+    <div class="contato-conteudo">
+        <div class="contato-info">
+            <h3>Fale comigo</h3>
+            <p>
+                Estou sempre aberto a aprender, trocar ideias e conhecer
+                novas oportunidades na área de tecnologia.
+            </p>
+
+            <div class="contato-item">
+                <span class="contato-simbolo">✉</span>
+                <div>
+                    <h4>E-mail</h4>
+                    <p>Entre em contato pelo formulário.</p>
+                </div>
+            </div>
+
+            <div class="contato-item">
+                <span class="contato-simbolo">⌘</span>
+                <div>
+                    <h4>GitHub</h4>
+                    <p>Confira meus projetos e códigos.</p>
+                </div>
+            </div>
+
+            <div class="contato-redes">
+                <a href="https://github.com/ErickrSouza21"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub">
+                    <img src="Imagens/github.png" alt="GitHub">
+                </a>
+
+                <a href="https://www.linkedin.com/in/erick-ribeiro-souza-195361403/"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <img src="Imagens/linkedin (1).png" alt="LinkedIn">
+                </a>
+
+                <a href="https://www.instagram.com/souza.erickribeiro"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <img src="Imagens/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+
+        <form class="contato-formulario" id="formularioContato">
+            <div class="campo-formulario">
+                <label for="nomeContato">Nome completo</label>
+                <input type="text" id="nomeContato" name="nome"
+                       placeholder="Digite seu nome"
+                       maxlength="100" autocomplete="name" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="telefoneContato">Telefone</label>
+                <input type="tel" id="telefoneContato" name="telefone"
+                       placeholder="(31) 99999-9999"
+                       maxlength="15" autocomplete="tel" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="emailContato">E-mail</label>
+                <input type="email" id="emailContato" name="email"
+                       placeholder="seuemail@exemplo.com"
+                       maxlength="150" autocomplete="email" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="mensagemContato">Mensagem</label>
+                <textarea id="mensagemContato" name="mensagem"
+                          placeholder="Escreva sua mensagem..."
+                          rows="5" maxlength="1500" required></textarea>
+            </div>
+
+            <button type="submit" class="botao-principal botao-enviar">
+                Enviar mensagem ↗
+            </button>
+
+            <p class="aviso-formulario">
+                Formulário demonstrativo para este portfólio.
+            </p>
+        </form>
+    </div>
+</section>
+
+<!-- FIM DA PARTE 3 -->
+
+    </main>
+
+    
+<footer class="rodape">
+    <a href="#inicio" class="logo">ERICK</a>
+
+    <p>Estudante de Tecnologia da Informação</p>
+
+    <div class="rodape-redes">
+        <a href="https://www.instagram.com/souza.erickribeiro" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="Imagens/instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://github.com/ErickrSouza21" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="Imagens/github.png" alt="GitHub">
+        </a>
+
+        <a href="https://www.linkedin.com/in/erick-ribeiro-souza-195361403" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="Imagens/linkedin (1).png" alt="LinkedIn">
+        </a>
+    </div>
+
+    <p class="rodape-direitos">
+        © 2026 Erick Ribeiro Souza. Todos os direitos reservados.
+    </p>
+</footer>
+
+<button type="button" id="botaoTema" class="botao-tema"
+        aria-label="Ativar modo claro" title="Alternar tema">
+    ☀
+</button>
+
+<dialog id="modalSucesso" class="modal-sucesso">
+    <div class="modal-conteudo">
+        <span class="modal-icone">✓</span>
+        <h2>Mensagem validada!</h2>
+        <p>
+            O formulário funcionou corretamente. Esta é uma demonstração:
+            sua mensagem ainda não foi enviada por e-mail.
+        </p>
+        <button type="button" id="fecharModal"
+                class="botao-principal">
+            Entendi
+        </button>
+    </div>
+</dialog>
+
+</body>
+</html>
